@@ -10,7 +10,6 @@ import { cn } from "@/utils/cn";
 
 /** Calm autoplay interval (seconds). */
 const AUTOPLAY_SECONDS = 9;
-const pad = (n: number) => String(n).padStart(2, "0");
 
 /**
  * 01 — Full-viewport cinematic hero.
@@ -341,13 +340,7 @@ export function Hero() {
       {/* Slide thumbnails */}
       <div data-hero-controls className="absolute inset-x-0 bottom-0 z-10">
         <Container>
-          <div className="flex items-end justify-between gap-3 border-t border-white/25 py-4">
-            <p className="pb-1 font-display text-xl leading-none tabular-nums" aria-hidden="true">
-              {pad(index + 1)}
-              <span className="mx-2 text-white/45">/</span>
-              <span className="text-white/65">{pad(slides.length)}</span>
-            </p>
-
+          <div className="flex items-end justify-end border-t border-white/25 py-4">
             <div>
               <p id="hero-slides-help" className="sr-only">
                 {reduced ? content.a11y.heroSlidesHelpReduced : content.a11y.heroSlidesHelp}
